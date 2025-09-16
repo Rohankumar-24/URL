@@ -8,13 +8,13 @@ async function handleGenerateNewShortURL(req, res) {
     return res.status(400).json({ error: "URL is required" });
   }
 
-  const shortID = nanoid(); // ✅ Use nanoid correctly
+  const shortID = nanoid(); //  Use nanoid correctly
 
   await URL.create({
     shortId: shortID,
     redirectURL: body.url,
     visitHistory: [],
-    createdBy: req.user._id, // ✅ Ensure you're tracking the user
+    createdBy: req.user._id, //  Ensure you're tracking the user
   });
 
   const urls = await URL.find({ createdBy: req.user._id }); // refresh list after create

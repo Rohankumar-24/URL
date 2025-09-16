@@ -1,6 +1,6 @@
 const express = require("express");
 const URL = require("../models/url");
-const { restrictTo } = require("../middlewares/auth"); // ✅ Proper import
+const { restrictTo } = require("../middlewares/auth"); //  Proper import
 
 const router = express.Router();
 
